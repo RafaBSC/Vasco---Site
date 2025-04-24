@@ -1,0 +1,11 @@
+.esticar {
+    width: 80%;     
+    height: 500px;   
+    border-radius: 10px; 
+  }
+
+  .filiacao-img {
+    border-radius: 10px;
+    width: 50%; 
+    height: 50%;
+  }

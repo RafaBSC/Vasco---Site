@@ -1,0 +1,8 @@
+<div class="card h-100" style="width: 18rem;">
+  <img [src]="Imagem" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{ Titulo }}</h5>
+    <p class="card-text">{{ Descricao }}</p>
+    <a *ngIf="mostrarBotao" [routerLink]="['/historia', Link]" class="btn btn-dark">{{ BotaoTexto }}</a>
+  </div>
+</div>

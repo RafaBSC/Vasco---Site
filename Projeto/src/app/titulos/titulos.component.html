@@ -1,0 +1,114 @@
+<!--NAVBAR-->
+<nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="home">
+        <img src="../assets/venda-vasco-1280x720.jpg" width="80" height="50" />
+      </a>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="https://vasco.com.br/"
+              >Site Vasco Da Gama</a
+            >
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Sobre o Vasco
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" [routerLink] ="['/elenco']">Elenco</a></li>
+              <li><a class="dropdown-item" [routerLink] ="['/estadio']">Estádio</a></li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li><a class="dropdown-item" [routerLink] ="['/titulos']">Títulos</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Digite aqui..."
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-success" type="submit">Pesquisar</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Banner -->
+   <div class="d-flex justify-content-center mt-4">
+  <div class="position-relative text-white">
+    <img src="assets/banner-sala-trofeus.png" class="img-fluid" alt="Banner">
+    <div class="position-absolute top-50 start-50 translate-middle">
+      <h2 style="font-family:Georgia, 'Times New Roman', Times, serif;">Sala de troféus</h2>
+    </div>
+  </div>
+  </div>
+
+   <!-- Lista de Cards -->
+   <div class="d-flex justify-content-around align-items-stretch flex-wrap mt-4">
+    <app-componente-card
+      *ngFor="let titulo of titulos"
+      [Imagem]="titulo.imagem" 
+      [Titulo]="titulo.titulo"
+      [mostrarBotao]="false">
+    </app-componente-card>
+  </div>
+
+  <div class="d-flex justify-content-around align-items-stretch flex-wrap mt-4">
+    <app-componente-card
+      *ngFor="let titulo of titulos2"
+      [Imagem]="titulo.imagem"
+      [Titulo]="titulo.titulo"
+      [mostrarBotao]="false">
+    </app-componente-card>
+  </div>
+
+  <div class="d-flex justify-content-around align-items-stretch flex-wrap mt-4">
+    <app-componente-card
+      *ngFor="let titulo of titulos3"
+      [Imagem]="titulo.imagem"
+      [Titulo]="titulo.titulo"
+      [mostrarBotao]="false">
+    </app-componente-card>
+  </div>
+
+  <div class="ms-4 mt-5">
+  <div *ngFor="let texto of titulosTexto">
+  <h2 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;"> {{ texto.tituloss }}</h2>
+  </div>
+  </div>
+
+  <div class="ms-4 mt-5">
+    <div *ngFor="let texto of subtitulo">
+    <h4 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;"> {{ texto.titulosss }}</h4>
+    </div>
+    </div>
+
+    <div class="ms-4 mt-3">
+      <div *ngFor="let texto of trofeis">
+      <a> {{ texto.titulosss }}</a>
+      </div>
+    </div>
+
+    <div class="ms-4 mt-5">
+      <div *ngFor="let texto of subtitulo2">
+      <h4 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;"> {{ texto.titulosss }}</h4>
+      </div>
+      </div>
+
+      <div class="ms-4 mt-3">
+        <div *ngFor="let texto of trofeis2">
+        <a> {{ texto.titulosss }}</a>
+        </div>
+      </div>
+    
