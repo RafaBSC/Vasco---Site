@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -584,7 +585,37 @@ export class AppService {
   addHistoria(novaHistoria: any) {
     this.listaHistorias.push(novaHistoria);
   }
-   constructor() {}
+   
+  //filtrar
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
+
+  extractId(keyword: string): number | null {
+    const match = keyword.match(/(\d+)$/);  
+    return match ? Number(match[1]) : null;
+  }
+   
+  searchManual(value: string): void {
+    const keyword = value.trim().toLowerCase();
+
+    const id = this.extractId(keyword);
+
+    if (id !== null) {
+  
+      this.router.navigate([`/historia/${id}`]);
+    } else {
+   
+      const routes = this.router.config;
+      const matchedRoute = routes.find(route => route.path && route.path.toLowerCase().includes(keyword));
+
+      if (matchedRoute) {
+    
+        this.router.navigate([`/${matchedRoute.path}`]); 
+      } else {
+        alert('Nenhuma rota encontrada para a palavra-chave.');
+      }
+    }
+  }
+  //fim
 
   //Jogadores
   getGoleiros() {
@@ -660,3 +691,5 @@ export class AppService {
     return this.listaTrofeis2;
   }
 }
+
+

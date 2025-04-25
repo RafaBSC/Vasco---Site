@@ -23,7 +23,8 @@ export class TitulosComponent {
 
   tituloform!: FormGroup;
 
-  constructor(private appService: AppService, private fb: FormBuilder) {}
+  constructor(public appService: AppService, private fb: FormBuilder) {}
+  
 
   ngOnInit(): void {
     this.titulos = this.appService.getTitulos();

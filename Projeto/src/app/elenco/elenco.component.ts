@@ -19,7 +19,8 @@ volantes: any[] = [];
 meio: any[] = [];
 atacantes: any[] = [];
 
-constructor(private appService: AppService) {}
+constructor(public appService: AppService) {}
+
 
 ngOnInit() {
   this.goleiros = this.appService.getGoleiros();

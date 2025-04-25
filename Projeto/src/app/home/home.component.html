@@ -31,15 +31,18 @@
             </ul>
           </li>
         </ul>
-        <form class="d-flex" role="search">
+
+        <form class="d-flex" role="search" (submit)="appService.searchManual(searchInput.value); $event.preventDefault();">
           <input
+            #searchInput
             class="form-control me-2"
             type="search"
             placeholder="Digite aqui..."
-            aria-label="Search"
+            aria-label="Search" 
           />
-          <button class="btn btn-outline-success" type="submit">Pesquisar</button>
+          <button class="btn btn-outline-secondary" type="submit">Pesquisar</button>
         </form>
+
       </div>
     </div>
   </nav>

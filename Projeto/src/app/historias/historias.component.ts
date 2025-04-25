@@ -29,7 +29,7 @@ export class HistoriasComponent implements OnInit{
     this.formularioAberto = !this.formularioAberto;
   }
 
-  constructor(private appService: AppService, private fb: FormBuilder) {}
+  constructor(public appService: AppService, private fb: FormBuilder,private router: Router) {}
 
   ngOnInit(): void {
     this.historias = this.appService.getHistorias();

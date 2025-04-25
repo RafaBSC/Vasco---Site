@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
 export class EstadioComponent implements OnInit {
   listaEstadio: any[] = [];
 
-  constructor(private route: ActivatedRoute, private appService: AppService) {}
+  constructor(private route: ActivatedRoute, public appService: AppService) {}
 
   ngOnInit() {
     this.listaEstadio = this.appService.listaEstadio;
